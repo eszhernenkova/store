@@ -6,7 +6,7 @@ import productsSlice from "./products/productsSlice";
 export const store = configureStore({
     reducer: {
         categories: categoriesSlice, 
-        products: productsSlice
+        products: productsSlice,
     },
     devTools: true,
 });
