@@ -11,3 +11,5 @@ export const buildUrl = (url, params) => {
 
     return urlWithParams;
 }
+
+export const sumBy = (arr) => arr.reduce((prev, curr)=> prev + curr, 0);

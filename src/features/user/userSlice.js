@@ -91,6 +91,10 @@ const userSlice = createSlice({
             state.favourites = newFavourites;
         },
 
+        removeItemFromCart: (state, { payload }) => {
+            state.cart = state.cart.filter(({ id }) => id !== payload)
+        },
+
         toggleForm: (state, { payload }) => {
             state.showForm = payload;
         },
@@ -108,5 +112,5 @@ const userSlice = createSlice({
 });
 
 
-export const { addItemToCart, addItemToFavourites, toggleForm, toggleFormType } = userSlice.actions;
+export const { addItemToCart, addItemToFavourites, toggleForm, removeItemFromCart, toggleFormType } = userSlice.actions;
 export default userSlice.reducer;
