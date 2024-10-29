@@ -25,7 +25,7 @@ const Cart = () => {
         style: 'currency',
         currency: 'USD'
     }
-    
+
     return (
         <section className={styles.cart}>
             <h2 className={styles.title}>Your cart</h2>
@@ -77,7 +77,7 @@ const Cart = () => {
                                         
                                     </div>
 
-                                    <div className={styles.total}>{price * quantity}$</div>
+                                    <div className={styles.total}>{new Intl.NumberFormat('en-US', options).format(price * quantity)}$</div>
 
                                     <div className={styles.close} onClick={ () => removeItem(item.id)}> 
                                         <svg className='icon'>
