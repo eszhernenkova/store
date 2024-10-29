@@ -5,6 +5,10 @@ import styles from "../../styles/Products.module.css";
 
 const Products = ({ title, style = {}, products = [], amount }) => {
   const list = products.filter((_, i) => i < amount);
+  const options = {
+        style: 'currency',
+        currency: 'USD'
+    }
 
   return (
     <section className={styles.products} style={style}>
@@ -24,9 +28,9 @@ const Products = ({ title, style = {}, products = [], amount }) => {
               <div className={styles.cat}>{cat}</div>
               <div className={styles.info}>
                 <div className={styles.prices}>
-                  <div className={styles.price}>{price}$</div>
+                  <div className={styles.price}>{new Intl.NumberFormat('en-US', options).format(price)}</div>
                   <div className={styles.oldPrice}>
-                    {Math.floor(price * 0.9)}$
+                    {new Intl.NumberFormat('en-US', options).format(Math.floor(price * 0.9))}
                   </div>
                 </div>
 

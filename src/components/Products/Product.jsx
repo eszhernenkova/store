@@ -37,6 +37,11 @@ const Product = (item)=> {
 
     }
 
+    const options = {
+        style: 'currency',
+        currency: 'USD'
+    }
+
     return (
     <section className={styles.product}>
         <div className={styles.images}>
@@ -56,7 +61,7 @@ const Product = (item)=> {
         </div>
         <div className={styles.info}>
             <h1 className={styles.title}>{title}</h1>
-            <div className={styles.price}>{price}$</div>
+            <div className={styles.price}>{new Intl.NumberFormat('en-US', options).format(price)}</div>
             <div className={styles.color}>
                 <span>Color:</span> Green
             </div>
