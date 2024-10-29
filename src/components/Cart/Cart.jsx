@@ -21,6 +21,11 @@ const Cart = () => {
         dispatch(removeItemFromCart(id));
     }
 
+    const options = {
+        style: 'currency',
+        currency: 'USD'
+    }
+    
     return (
         <section className={styles.cart}>
             <h2 className={styles.title}>Your cart</h2>
@@ -44,7 +49,7 @@ const Cart = () => {
                                         <div className={styles.category}>{category.name}</div>
                                     </div>
 
-                                    <div className={styles.price}>{price}$</div>
+                                    <div className={styles.price}>{new Intl.NumberFormat('en-US', options).format(price)}</div>
 
                                     <div className={styles.quantity}>
                                         <div 

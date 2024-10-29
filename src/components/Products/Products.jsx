@@ -6,9 +6,9 @@ import styles from "../../styles/Products.module.css";
 const Products = ({ title, style = {}, products = [], amount }) => {
   const list = products.filter((_, i) => i < amount);
   const options = {
-        style: 'currency',
-        currency: 'USD'
-    }
+    style: 'currency',
+    currency: 'USD'
+  }
 
   return (
     <section className={styles.products} style={style}>
